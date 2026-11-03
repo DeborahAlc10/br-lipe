@@ -14,7 +14,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- TikTok Pixel Code End -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verifique seu status</title>
+  <title>Continue para a próxima etapa</title>
   <style>
     * {
       margin: 0;
@@ -807,7 +807,46 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       flex-direction: column;
       min-height: 100vh;
     }
-  </style>
+  
+/* V2 — composição limpa, tipografia expressiva e navegação acessível */
+:root { --tt-pink:#e93460; --tt-pink-dark:#cf234d; --tt-black:#191b24; --neutral-600:#616775; --neutral-400:#717786; --neutral-200:#e6e7ec; }
+body { background:#f5f5f8; }
+#mainContent { min-height:0; }
+.overlay { position:relative; min-height:calc(100svh - 100px); padding:48px 24px; background:radial-gradient(ellipse at 14% 16%,#fce5eb 0,transparent 42%),radial-gradient(ellipse at 90% 88%,#e1f4f2 0,transparent 38%),#f5f5f8; }
+.popup { width:100%; max-width:500px; padding:38px; background:rgba(255,255,255,.94); border:1px solid white; border-radius:28px; box-shadow:0 22px 80px #252d4210; }
+.step-label { display:flex; align-items:center; justify-content:space-between; color:#626977; font-size:11px; font-weight:750; letter-spacing:.12em; margin-bottom:36px; }
+.step-label::before { content:''; width:24px; height:3px; background:var(--tt-pink); border-radius:8px; margin-right:10px; }
+.step-label span { margin-left:auto; font-size:10px; }
+.simple-mark { margin:0 0 22px; width:56px; height:56px; border-radius:18px; font-size:30px; background:#fce8ee; }
+.choice-title { text-align:left; font-size:clamp(2.2rem,8vw,3rem); line-height:1.06; letter-spacing:-.055em; margin-bottom:18px; font-weight:800; }
+.choice-copy { text-align:left; font-size:15px; line-height:1.7; margin-bottom:32px; color:var(--neutral-600); }
+.single-go { justify-content:space-between; padding:0 23px; height:62px; border-radius:14px; background:var(--tt-pink); box-shadow:0 8px 20px #e9346020; font-size:16px; font-weight:700; }
+.single-go:hover { background:var(--tt-pink-dark); }
+.single-go span { color:white; }
+footer { position:relative; background:#f5f5f8; border:0; padding:20px 16px 24px; font-size:11px; }
+footer .footer-links { margin-bottom:8px; gap:12px; }
+#mainContent { position:absolute; top:calc(100svh - 100px); width:100%; z-index:102; }
+.math-heading { font-size:32px; letter-spacing:-.045em; text-align:center; margin-bottom:12px; }
+.math-question-title { font-size:14px; font-weight:400; margin-bottom:30px; }
+.math-question { padding:25px 0; border-radius:18px; background:#f7f7fa; margin-bottom:22px; }
+.math-question span { font-size:64px; }
+.math-question .math-plus,.math-question .math-equals { font-size:40px; }
+.answer-box { background:#fff; border-radius:14px; font-size:24px; }
+.answer-go { border-radius:14px; }
+.back-button { color:#626977; border:0; background:none; cursor:pointer; padding:0 0 24px; font:inherit; font-size:13px; }
+.back-button:hover { color:var(--tt-pink); }
+:focus-visible { outline:3px solid #087d79; outline-offset:5px; }
+#confirmationScreen { background:#f5f5f8; }
+.finish-code { color:#137c65; background:#e1f2eb; width:72px; height:72px; font-size:30px; }
+.confirmation-title { font-weight:800; }
+.confirmation-subtitle { max-width:280px; line-height:1.7; }
+.number-runner { width:240px; opacity:.65; margin-top:32px; }
+.number-track span { font-size:24px; }
+@media(max-width:520px) { .overlay { padding:30px 20px; } .popup { padding:28px 24px; border-radius:24px; } .step-label { margin-bottom:30px; } .choice-title { font-size:38px; } }
+@media(max-height:650px) { .overlay { min-height:640px; } #mainContent { top:640px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+
+</style>
 
 
 
@@ -832,7 +871,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <span>•</span>
       <a href="#" onclick="openPolicy('terms'); return false;">Termos de Uso</a>
     </div>
-    <div>© 2025 Todos os direitos reservados.</div>
+    <div>© 2026 Todos os direitos reservados.</div>
   </footer>
 
 </div>
@@ -841,8 +880,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <div id="confirmationScreen">
   <div class="confirmation-inner number-final">
     <div class="finish-code">✓</div>
-    <div class="confirmation-title">Tudo certo!</div>
-    <p class="confirmation-subtitle">Aguarde um instante.</p>
+    <div class="confirmation-title" role="status">Tudo certo!</div>
+    <p class="confirmation-subtitle">Você será direcionado para a próxima página.</p>
 
     <div class="number-runner" aria-label="Carregando">
       <div class="number-track">
@@ -860,33 +899,33 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="popup">
 
     <section class="welcome-step" id="welcomeStep">
-      <div class="simple-mark">✦</div>
-      <h1 class="choice-title">Tudo pronto?</h1>
-      <p class="choice-copy">Falta só um passo rápido.</p>
+      <div class="step-label">01 / 02 <span>PARA COMEÇAR</span></div><div class="simple-mark" aria-hidden="true">↗</div>
+      <h1 class="choice-title">Seu próximo passo<br>começa aqui.</h1>
+      <p class="choice-copy">Uma confirmação simples e você continua para a próxima página.</p>
 
       <button class="single-go" type="button" onclick="goToMath()">
-        Vamos!
+        Quero continuar
         <span>→</span>
       </button>
     </section>
 
     <section class="captcha-step" id="captchaStep">
       <div class="math-layout">
-        <div class="math-prompt math-question-title">Quanto é 1 + 1?</div>
+        <button class="back-button" type="button" onclick="showWelcome()">← Voltar</button><div class="step-label">02 / 02 <span>CONFIRMAÇÃO</span></div><h2 class="math-heading">Só mais um passo.</h2><div class="math-prompt math-question-title">Digite o resultado para continuar.</div>
 
-        <div class="math-question compact-equation" aria-hidden="true">
+        <div class="math-question compact-equation" aria-label="Quanto é um mais um?">
           <span>1</span>
           <span class="math-plus">+</span>
           <span>1</span>
           <span class="math-equals">=</span>
         </div>
 
-        <div class="answer-row">
+        <form class="answer-row" onsubmit="event.preventDefault(); checkCaptcha()">
           <input class="answer-box" id="captchaInput" type="text" inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digite a resposta" placeholder="?">
-          <button class="answer-go" type="button" onclick="checkCaptcha()" aria-label="Confirmar resposta">→</button>
-        </div>
+          <button class="answer-go" type="submit" aria-label="Confirmar resposta">→</button>
+        </form>
 
-        <div class="answer-hint" id="errorMsg">Digite a resposta.</div>
+        <div class="answer-hint" id="errorMsg" role="status" aria-live="polite">Digite a resposta.</div>
       </div>
     </section>
 
@@ -1037,22 +1076,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     redirectTimer = setTimeout(() => {
       const params = window.location.search;
-      window.location.href = (function () {
-  var destino = new URL("/", window.location.origin);
-  destino.search = new URLSearchParams(params).toString();
-  destino.searchParams.set("entrada", "principal");
-  destino.hash = window.location.hash;
-  return destino.href;
-})();
+      window.location.href = '/' + params + window.location.hash;
     }, 1700);
   }
 
   document.getElementById('captchaInput').addEventListener('input', function () {
     this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1);
-  });
-
-  document.getElementById('captchaInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') checkCaptcha();
   });
 
   // Em carregamento/recarregamento normal, começa do início.
